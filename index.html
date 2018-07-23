@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>CMET Paulo Freire</title>
+		<meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width">
+		<link rel="icon" href="favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="style.css" />
+	</head>
+    <body>
+            <header>
+				<div id="header" align="right">
+					<a href="/cmet/portal-professor"><button class="bt-login-professor">Portal do professor</button></a>
+					<a href="/cmet/portal-aluno"><button class="bt-login-aluno">Portal do aluno</button></a>
+					<a href="https://www.facebook.com/cmet.cmetpaulofreire?fref=ts"><button class="bt-facebook">.</button></a>
+				</div>
+				<div id="banner">
+					<a href="index.html"><img src="logo.png" /></a>
+				</div>
+			</header>
+			
+            <nav>
+				<div id="nav" align="right">
+					<button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarCollapse">
+						<ul>
+							<li>
+								<a href="index.html"><h4>Home</h4></a>
+							</li>
+							<li>
+								<a href="#"><h4>Services</h4></a>
+							</li>
+							<li>
+								<a href="#"><h4>Contacts</h4></a>
+							</li>
+						</ul>					
+					</div>
+				</div>
+			</nav>
+			
+            <section>
+                <img class="imgsSlide" src="img_lights.jpg">
+				<img class="imgsSlide" src="img_mountains.jpg">
+				<img class="imgsSlide" src="img_forest.jpg">
+				<button id="button-left" onclick="plusDivs(-1)"><</button></button></button>
+				<button id="button-right" onclick="plusDivs(+1)">></button></button></button>
+                </div>
+				<div>
+					<div class="section-home">
+						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+					</div>
+					<div class="section-home">
+						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+					</div>
+					<div class="section-home">
+						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+					</div>
+				</div>
+            </section>
+            <footer id="footer">
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <hr style="border-color:rgb(14,20,14);"/>
+                <br/><br/><br/><br/>
+                <h1>
+                    Desenvolvido por <a href="http://www.linkedin.com/in/lucas-costa-alves">Lucas Costa Alves</a>.
+                </h1>
+                <br/><br/>
+                <h2>
+                    Copyright 2018
+                    <br/><br/>
+                    Todos direitos reservados.
+                </h2>
+                <br/><br/><br/><br/><br/>
+            </footer>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+            <script src="/cmet/bootstrap-4.1.1/dist/js/bootstrap.min.js"></script>
+            <script>
+                var slideIndex = 1;
+                showDivs(slideIndex);
+
+                function plusDivs(n){
+                    showDivs(slideIndex += n);
+                }
+                function showDivs(n){
+                    var i;
+                    var x = document.getElementsByClassName("imgsSlide");
+                    if (n > x.length) {slideIndex = 1} 
+                    if (n < 1) {slideIndex = x.length} ;
+                    for (i = 0; i < x.length; i++){
+                        x[i].style.display = "none"; 
+                    }
+                    x[slideIndex-1].style.display = "block"; 
+                }
+            </script>
+			<script>
+				var myIndex = 0;
+				carousel();
+
+				function carousel() {
+					var i;
+					var x = document.getElementsByClassName("imgsSlide");
+					for (i = 0; i < x.length; i++) {
+					   x[i].style.display = "none";  
+					}
+					myIndex++;
+					if (myIndex > x.length) {myIndex = 1}    
+					x[myIndex-1].style.display = "block";  
+					setTimeout(carousel, 4000);
+				}
+			</script>
+			<script>
+				$(function(){   
+					var nav = $('#nav');   
+					$(window).scroll(function () { 
+						if ($(this).scrollTop() > 245) { 
+							nav.addClass("fixed-top"); 
+						} else { 
+							nav.removeClass("fixed-top");
+						} 
+					});  
+				});
+			</script>
+    </body>
+</html>
